@@ -16,8 +16,14 @@ Here we make a 1D chain of atoms modeled by a simple harmonic potential `U=r^2`.
 
 ### `1d_chain_d6.ipynb`
 
-Same as previous, except cleaned up and we fit the neural network potential to forces here. The force fitting is slow because of loops in PyTorch... Need to think about how to speed this up! 
+Same as previous, except cleaned up and we fit the neural network potential to forces here. The force fitting is slow because of loops in PyTorch... Need to think about how to speed this up!
 
 ### `1d_chain_d7.ipynb`
 
 Here we verify that the neural network model forces are equivalent to those calculated via finite difference.
+**Notes on fitting**:
+- Good agreement for pure energy fitting: loss~1e-5
+- This can take 3000-4000 epochs.
+- Good agreement for energy + force fitting: loss~1e-4
+- This can also take 3000-4000 epochs.
+- Training time with forces is very slow - need to replace Python loops in force calculation with tensor operations.
