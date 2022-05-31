@@ -27,3 +27,7 @@ Here we verify that the neural network model forces are equivalent to those calc
 - Good agreement for energy + force fitting: loss~1e-4
 - This can also take 3000-4000 epochs.
 - Training time with forces is very slow - need to replace Python loops in force calculation with tensor operations.
+
+### `nn_force_check.py`
+
+Compare NN model forces to finite difference forces. Model forces are calculated via the spatial gradient of the network energy, using a modified `compute_snap.cpp` located at https://github.com/rohskopf/lammps/tree/compute-snap.
